@@ -1,1 +1,0 @@
-web: gunicorn nma.wsgi --log-file -
