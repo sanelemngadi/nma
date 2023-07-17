@@ -1896,6 +1896,11 @@ section.meet-nma .meet-nma_cards li a {
   transform: translateX(-120%);
   transition: all 0.5s ease-in-out;
 }
+@media screen and (min-width: 768px) {
+  .side-bar {
+    display: none;
+  }
+}
 .side-bar.active {
   transform: translateX(0%);
   transition: all 0.5s ease-in-out;
