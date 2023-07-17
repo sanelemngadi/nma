@@ -7,10 +7,11 @@
 
 {% block content %}
     <main>
+        {% include 'global/side-nav.html' %}
         <div class="container">
             <div class="store-hero">
                 <div class="store-hero_categories">
-                   <div style="position: sticky; top: 1rem;">
+                   <div class="hide-small" style="position: sticky; top: 1rem;">
                     <!-- {% include "home/filters.html" %} -->
                     {% include "home/categories.html" %}
                    </div>

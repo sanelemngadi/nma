@@ -1,0 +1,36 @@
+<section class="side-bar" id="side-bar">
+    <div class="container">
+        <div class="side-bar_content">
+            <div class="user">
+                <div class="image"></div>
+                <p>Sanele Mngadi</p>
+                <button id="close-side-bar">X</button>
+            </div>
+            <input type="search" name="" id="" placeholder="search">
+
+            
+            <ul class="elements">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'services' %}">Services</a></li>
+                <li><a href="{% url 'about-us' %}">About us</a></li>
+                <li><a href="{% url 'contact-us' %}">Contact Us</a></li>
+                
+                <!-- <li class="category">Category</li>
+                <li class="category-items"><a href="#">Sweaters</a></li>
+                <li class="category-items"><a href="#">Hoodies</a></li>
+                <li class="category-items">
+                    <div>
+                        <a href="#">T-shirts</a>
+                        <input type="checkbox" name="hidden" id="t-shirts">
+                        <label for="t-shirts" class="dropdown">^</label>
+                    </div>
+                    <ul>
+                        <li>Long Sleeve</li>
+                        <li>Shorts Sleeve</li>
+                    </ul>
+                </li> -->
+            </ul>
+            {% include 'home/categories.html' %}
+        </div>
+    </div>
+</section>
