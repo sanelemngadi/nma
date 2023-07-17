@@ -85,11 +85,13 @@ categoryItems.forEach(item => {
 
 const addToCartButton = document.querySelector("#add-to-cart");
 
-addToCartButton.addEventListener("mousedown", (event)=>{
-   // event.preventDefault();
-
-    console.log("add to cart");
-})
+if(addToCartButton){
+    addToCartButton.addEventListener("mousedown", (event)=>{
+        // event.preventDefault();
+     
+         console.log("add to cart");
+     })
+}
 
 ///////////////////////// scrolling scroller
 const scroller = document.querySelector("#scroller");
@@ -115,4 +117,72 @@ window.addEventListener("scroll", ()=>{
 
 scroller.addEventListener("mousedown", ()=>{
     window.scrollTo({top: 0});
+})
+
+//// toggle side bar
+const sideBar = document.querySelector("section.side-bar");
+const hurmburger = document.querySelector("#humburger");
+
+
+class ToggleElements{
+    constructor(){
+        this.element = null;
+        this.className = "";
+    }
+
+    setClassName(name){
+        this.className = name;
+    }
+
+    setElement(elem){
+        this.element = elem;
+    }
+
+    toggleClassName() {
+        if(!this.element){
+            return;
+        }
+        const cls = this.element.classList;
+        if(cls.contains(this.className)){
+            this.element.classList.remove(this.className);
+        }else{
+            this.element.classList.add(this.className);
+        }
+    }
+
+    toggleClassNameInItems(htmlElements){
+        if(!this.element || !Array.isArray(htmlElements) || htmlElements.length <= 0){
+            return;
+        }
+
+        htmlElements.forEach((item)=>{
+            if(item.classList.contains(this.className)){
+                item.classList.remove(this.className);
+            }
+        });
+
+        // now all elements does not have className 
+        this.element.classList.add(this.className);
+    }
+}
+
+const closeSideBarBtn = document.getElementById("close-side-bar");
+const toggle = new ToggleElements();
+
+hurmburger.addEventListener("click", ()=>{
+    toggle.setClassName('active');
+    toggle.setElement(sideBar);
+    toggle.toggleClassName();
+});
+
+closeSideBarBtn.addEventListener("click", ()=>{
+    toggle.setClassName('active');
+    toggle.toggleClassName();
+})
+
+window.addEventListener("click", (e)=>{
+    console.log("hellow");
+    if(e.target.id === 'side-bar'){
+        console.log("inside");
+    }
 })

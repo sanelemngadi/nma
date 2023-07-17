@@ -157,3 +157,13 @@ h1, h2, h3, h4, h5, h6{
 @import "admin/admin";
 
 @import "cart/cart";
+
+@import "side-nav";
+
+
+.hide-small{
+    display: none;
+    @include device($md){
+        display: block;
+    }
+}
