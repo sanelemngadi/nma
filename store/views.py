@@ -34,3 +34,15 @@ def admin_view(request):
     
 def cart_view(request):
     return render(request, "pages/cart.html",{})
+
+def login_view(request):
+    data = {
+        "page": "Sign In"
+    }
+    return render(request, "pages/login.html",{"data": data})
+
+def register_view(request):
+    data = {
+        "page": "Sign Up"
+    }
+    return render(request, "pages/login.html",{"data": data})

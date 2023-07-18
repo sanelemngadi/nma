@@ -10,6 +10,8 @@ urlpatterns = [
     path("custom-design/", views.design_view, name="design"),
     path("shop-items/", views.shop_view, name="shop"),
     path("product-2/", views.product_detail_view, name="product-detail"),
-    path("account-sanele-mngadi-23/", views.admin_view, name="admin"),
+    path("my-account/", views.admin_view, name="admin"),
     path("cart/", views.cart_view, name="cart"),
+    path("sign-in/", views.login_view, name="sign-in"),
+    path("sign-up/", views.register_view, name="sign-up"),
 ]
